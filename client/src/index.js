@@ -34,9 +34,68 @@ class MainDisplay extends React.Component{
 	render(){
 		return(
 				<div class="main-display-wrapper">
-					hello
+					<p>Sign In!</p>
+					<SignIn />
+					<p>Sign Up!</p>
+					<SignUp />
 				</div>
 			);
+	}
+}
+
+class SignUp extends React.Component{
+	render(){
+		return(
+			<div> 
+				<form action="/signup/" method="post">
+				  <div>
+				    <label>Email  </label>
+				    <input name="email" id="email" defaultValue="Email"/>
+				  </div>
+				  <div>
+				    <label>First Name  </label>
+				    <input name="fname" id="fname" defaultValue="First Name"/>
+				  </div>
+				  <div>
+				    <label>Last Name  </label>
+				    <input name="lname" id="lname" defaultValue="Last Name"/>
+				  </div>
+				  <div>
+				    <label>Password  </label>
+				    <input name="password" id="password" defaultValue="Password"/>
+				  </div>
+				   <div>
+				    <label>Password Confirmation</label>
+				    <input name="passwordConf" id="passwordConf" defaultValue="Retype Password"/>
+				  </div>
+				  <div>
+				    <input type="submit" value="submit"/>
+				  </div>
+				</form>
+			</div>
+		);
+	}
+}
+
+class SignIn extends React.Component{
+	render(){
+		return(
+			<div>
+				<form action="/signin/" method="post">
+				<div>
+				    <label>Email  </label>
+				    <input name="logemail" id="logemail" defaultValue="email"/>
+				 </div>
+				   <div>
+				    <label>Password</label>
+				    <input name="logpassword" id="logpassword" defaultValue="Password"/>
+				  </div>
+				  <div>
+				    <input type="submit" value="submit"/>
+				</div>
+				</form>
+			</div>
+		);
 	}
 }
 
